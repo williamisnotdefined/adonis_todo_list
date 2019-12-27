@@ -1,0 +1,12 @@
+@layout('main')
+@section('content')
+<h1>{{ title }}</h1>
+<div class="alert alert-success" role="alert">
+	Alerta de sucesso
+</div>
+<div class="list-group">
+	@each(task in tasks)
+		<a href="#" class="list-group-item list-group-item-action">{{ task.name }}</a>
+	@endeach
+</div>
+@endsection
