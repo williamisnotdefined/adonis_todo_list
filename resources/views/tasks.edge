@@ -1,12 +1,16 @@
 @layout('main')
 @section('content')
 <h1>{{ title }}</h1>
+
+@if(old('notification'))
 <div class="alert alert-success" role="alert">
-	Alerta de sucesso
+	{{ old('notification') }}
 </div>
+@endif
+
 <div class="list-group">
 	@each(task in tasks)
-		<a href="#" class="list-group-item list-group-item-action">{{ task.name }}</a>
+	<a href="task/{{task.id}}" class="list-group-item list-group-item-action">{{ task.title }}</a>
 	@endeach
 </div>
 @endsection

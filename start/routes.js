@@ -16,5 +16,9 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('home')
-Route.get('/tasks', 'TaskController.index')
+Route.get('/', 'TaskController.index')
+Route.get('/task/:id', 'TaskController.detail')
+Route.get('/remove/:id', 'TaskController.remove')
+
+Route.on('/add').render('add_task')
+Route.post('/add', 'TaskController.store')
